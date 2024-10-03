@@ -43,6 +43,10 @@ function draw() {
   textSize(8);
   textAlign(LEFT);
   text(confianza, 10, height - 4);
+
+  if ((label = "crema" && confianza >= 0.99)) {
+    background(255, 165, 0);
+  }
 }
 
 // Get a prediction for the current video frame
