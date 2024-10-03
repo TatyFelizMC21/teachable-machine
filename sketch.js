@@ -17,14 +17,13 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(320, 260);
+  createCanvas(windowWidth, windowHeight);
   // Create the video
   video = createCapture(VIDEO);
-  video.size(320, 240);
+  video.size(windowWidth, windowHeight);
   video.hide();
 
-  //flippedVideo = ml5.flipImage(video);
-
+  // flippedVideo = ml5.flipImage(video);
   // Start classifying
   classifyVideo();
 }
@@ -40,11 +39,13 @@ function draw() {
   textAlign(CENTER);
   text(label, width / 2, height - 4);
 
+  //LVL DE CONFIANZA
   textSize(8);
   textAlign(LEFT);
   text(confianza, 10, height - 4);
 
-  if ((label = "crema" && confianza >= 0.99)) {
+  //Cambiar la pantalla a NARANJA
+  if (label == "crema" && confianza >= 0.9) {
     background(255, 165, 0);
   }
 }
